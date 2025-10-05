@@ -21,11 +21,19 @@ def squareroot(n):
             min = guess
 
     # Testing with values such as 10000000000, I found that there are some floating point errors, which we try to rectify here to present our value nicely 
-    if abs(guess - int(guess)) < 1e-5:
-        guess = int(guess)
-
-    print(guess)
-
-squareroot(10000000000) 
+    if abs(guess - round(guess, 1)) < 1e-5:
+        guess = round(guess, 1)
     
+    print("sqrt(", n, ") ~", guess)
+
+squareroot(1) 
+squareroot(2)
+squareroot(4)
+squareroot(15)
+squareroot(16)
+squareroot(100)
+squareroot(1000)
+squareroot(10000)
+squareroot(100000)
+
 
